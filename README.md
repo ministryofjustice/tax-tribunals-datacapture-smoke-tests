@@ -24,7 +24,7 @@ The script for running the Docker container on MoJ's CI is as follows:
 
 set -euo pipefail
 
-docker build -f Dockerfile.smoketests -t smoketests .
+docker build -t smoketests .
 docker run smoketests
 ```
 The default target environment is dev.  You can change this at run
@@ -35,7 +35,7 @@ time by overriding the DATACAPTURE_URI environment variable:
 
 set -euo pipefail
 
-docker build -f Dockerfile.smoketests -t smoketests .
+docker build -t smoketests .
 docker run -e "DATACAPTURE_URI=https://tax-tribunals-datacapture-staging.dsd.io" smoketests
 ```
 
